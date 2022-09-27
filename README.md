@@ -42,17 +42,17 @@ browseVignettes("odetector")
 ## Cite the package
 To cite the package please use one of the following items fits to your references list:
 
-Cebeci, Z. (2021). odetector: Two novel outlier detection approaches based-on unsupervised possibilistic and fuzzy clustering.
-URL https://github.com/zcebeci/odetector
 
-or in BibTeX format:
+Cebeci Z, Cebeci C, Tahtali Y, Bayyurt L. 2022. Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering. PeerJ Computer Science 8:e1060 https://doi.org/10.7717/peerj-cs.1060
+
+or in BibTeX format as follows:
 ```
 @misc{zcebeciodetector,
-  author = {Cebeci, Z.},
-  title = {odetector: Two novel outlier detection approaches based-on unsupervised possibilistic and fuzzy clustering.},
-  year = {2021},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/zcebeci/odetector}},
+  author = {Cebeci, Z. and Cebeci, C. and Tahtali, Y. and Bayyurt, L.},
+  title = {Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering},
+  year = {2022},
+  journal = {PeerJ Computer Science},
+  volume={8:e1060},
+  howpublished = {\url{https://doi.org/10.7717/peerj-cs.1060}},
 }
  ```
