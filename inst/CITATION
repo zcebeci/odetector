@@ -1,10 +1,11 @@
-year <- sub("-.*", "", meta$Date) 
-note <- sprintf("R package version %s", meta$Version)
-textVersion = paste0("Cebeci, Z. & Yildiz, F. (", year,"). odetector: Outlier Detection Using Cluster Analysis. ", note, ", URL https://CRAN.R-project.org/package=odetector")
-bibentry(textVersion, bibtype = "Manual",
- title = "{odetector}: Outlier Detection Using Cluster Analysis",
+textVersion="Cebeci, Z., Cebeci, C., Tahtali, Y. & Bayyurt, L. (2022). Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering. PeerJ Computer Science 8:e1060. doi: https://doi.org/10.7717/peerj-cs.1060")
+bibentry("Cebeci_outlier", bibtype = "Article",
+ title = "Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering",
  author = c(person("Zeynel", "Cebeci"),
- person("Figen", "Yildiz")),
- year = year,
- note = note, 
- url = "https://CRAN.R-project.org/package=odetector")
+ person("Cagatay", "Cebeci"),
+ person("Yalcin", "Tahtali"),
+ person("Lutfi","Bayyurt")),
+ year = 2022,
+ journal = "PeerJ Computer Science",
+ volume="8:e1060",
+ doi = "https://doi.org/10.7717/peerj-cs.1060")
