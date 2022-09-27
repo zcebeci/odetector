@@ -1,8 +1,8 @@
 Package:odetector
 Type: Package
 Title: Outlier Detection Using Cluster Analysis
-Version: 0.1.0
-Date: 2017-12-13
+Version: 1.1.0
+Date: 2022-09-27
 Authors@R: c(person("Zeynel", "Cebeci", email = "zcebeci@cukurova.edu.tr", role = c("aut", "cre")), 
      person("Cagatay","Cebeci", role = "aut", email = "cebecicagatay@gmail.com"))
 Author: Zeynel Cebeci [aut], Cagatay Cebeci [aut]
@@ -10,7 +10,6 @@ Maintainer: Zeynel Cebeci <zcebeci@cukurova.edu.tr>
 Description: An object is called "outlier" if it remarkably deviates from the other objects in a data set. Outlier detection is the process to find outliers by using the methods that are based on distance measures, clustering and spatial methods (Ben-Gal, 2005 <ISBN 0-387-24435-2>). This package introduces a clustering-based outlier detection method. This novel method detects the outliers with three approaches processing typicality degrees that are obtained using the Unsupervised Possibilistic Fuzzy C-Means clustering algorithm (Wu et al, 2010).
 Depends: R (>= 3.0.0)
 License: GPL (>= 2)
-LazyData: true
 Imports: ppclust
 Suggests: knitr, rmarkdown, prettydoc
 VignetteBuilder: knitr, rmarkdown
