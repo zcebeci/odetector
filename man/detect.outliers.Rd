@@ -39,7 +39,7 @@ Santos-Pereira, C.M. & Pires, A.M. (2002), Detection of outliers in multivariate
 Wu, X., Wu, B., Sun, J. & Fu, H. (2010). Unsupervised possibilistic fuzzy clustering. \emph{ J. of Information & Computational Sci.}, 7 (5): 1075-1080.
 }
 
-\author{Zeynel Cebeci, Figen Yildiz}
+\author{Zeynel Cebeci, Cagatay Cebeci}
 
 \seealso{
  \code{\link{plot.outliers}},
