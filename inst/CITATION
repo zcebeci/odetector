@@ -1,14 +1,14 @@
 citHeader("To cite odetector in publications use:
 
-Cebeci, Z., Cebeci, C., Tahtali, Y. and Bayyurt, L. 2022. Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering. Peerj Computer Science 8:e1060. https://doi.org/10.7717/peerj-cs.1060.")
+Cebeci, Z., Cebeci, C., Tahtali, Y. and Bayyurt, L. 2022. Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering. PeerJ Computer Science 8:e1060. https://doi.org/10.7717/peerj-cs.1060.")
 
 citEntry(
    entry="Article",
    title = "Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering",
-   author = personList(person(first="Zeynel", last="Cebeci"), 
-            person(first="Cagatay", last="Cebeci"),
-            person(first="Yalcin",  last="Tahtali"),
-            person(first="Lutfi", last="Bayyurt")),
+   author = personList(person(given="Zeynel", family="Cebeci"), 
+            person(given="Cagatay", family="Cebeci"),
+            person(given="Yalcin",  family="Tahtali"),
+            person(given="Lutfi", family="Bayyurt")),
    journal = "PeerJ Computer Science",
    year    = 2022,
    volume = "8",
