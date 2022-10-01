@@ -1,9 +1,9 @@
 print.outliers <- function(x, ...){
+  if(missing(x))
+    stop("Missing input argument x")
   objo <- x
-  if(missing(objo))
-    stop("Missing input argument 'outliers' object")
   if(!inherits(objo, "outliers")) 
-    stop("The input argument 'outliers' must be an instance of the class 'outliers'")
+    stop("The input argument 'x' should be an object of the 'outliers' class")
   X <- objo$X
   cat("Outliers from ", deparse(objo$call), "\n")
   cat(rep("-", 80))

@@ -2,7 +2,7 @@
 \alias{x3p4c}
 \docType{data}
 \title{
-Synthetic data set of three variables with four clusters
+Synthetic data set consists of three variables with four clusters
 }
 \description{
 A synthetic data set which was created by using the R package \sQuote{MixSim} (Melnykov et al, 2013). It consists of three continous variables forming four clusters. The last ten rows between Line 121 and 130 of the data set contains the outliers which are labeled as the class "0". 
@@ -17,7 +17,7 @@ A synthetic data set which was created by using the R package \sQuote{MixSim} (M
  }
 }
 \note{
-The data set \code{x3p4c} is recommended to test the outlier detection algorithms. 
+The data set \code{x3p4c} is recommended to learn the outlier detection algorithms. 
 }
 \references{
 Melnykov, V., Chen,W-C. & Maitra, R. (2013). MixSim: An R package for simulating data to study performance of clustering algorithms. \emph{Journal of Statistical Software}, 51(12):1-25.

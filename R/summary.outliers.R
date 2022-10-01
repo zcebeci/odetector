@@ -1,9 +1,9 @@
 summary.outliers <- function (object, ...){
+  if(missing(object))
+    stop("Missing input argument 'object'")
   objo <- object
-  if(missing(objo))
-    stop("Missing input argument 'outliers' object")
   if(!inherits(objo, "outliers")) 
-    stop("The input argument 'outliers' must be an instance of the class 'outliers'")
+    stop("The input argument 'x' should be an object of the 'outliers' class") 
   X <- objo$X
   cat("Summary of Outliers from ", deparse(objo$call), "\n")
   cat(rep("-",80))

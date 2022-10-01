@@ -5,14 +5,14 @@
 \method{print}{outliers}(x, \dots)
 }
 \arguments{
-  \item{x}{an object of \code{outliers} class which having the outliers to be printed. See \code{\link{detect.outliers}} for the details.}
+  \item{x}{an object of \code{outliers} class containing the outliers to be printed. See \code{\link{detect.outliers}} for  details.}
   \item{\dots}{additional arguments for S3 method \code{print}.}
 }
 \description{
 Prints the outliers found in a data set.
 }
 \value{Print out of the object of \code{outliers} class.}
-\author{Zeynel Cebeci, Figen Yildiz}
+\author{Zeynel Cebeci, Cagatay Cebeci, Yalcin Tahtali}
 \seealso{
  \code{\link{detect.outliers}},
  \code{\link{pairs.outliers}},
@@ -22,20 +22,19 @@ Prints the outliers found in a data set.
  \code{\link[ppclust]{upfc}}
 }
 \examples{
-# Load the dataset x3p4c and 
-# use the first three columns 
+# Load the dataset x3p4c and use the first three columns 
 data(x3p4c)
 x <- x3p4c[,1:3]
 
-# For 4 clusters, run Unsupervised Possibilistic 
-# Fuzzy C-Means (UPFC) algorithm of the package ppclust 
+# For 4 clusters, run Unsupervised Possibilistic Fuzzy C-Means (UPFC) algorithm 
+# of the package ppclust 
 res.upfc <- ppclust::upfc(x, centers=4)
 
 # Detect the outliers 
-outs <- detect.outliers(res.upfc)
+out <- detect.outliers(res.upfc)
  
 # Print the outliers
-print(outs)
+print(out)
 }
 \concept{outlier detection}
 \concept{anomaly detection}

@@ -1,4 +1,4 @@
-detect.outliers <- function(x, k, tt=0.05, rst=0.2, tcs="m1"){
+detect.outliers <- function(x, k, alpha=0.05, alpha2=0.2, tsc="m1"){
   if(missing(x))
     stop("Missing input argument 'x'")
   if(inherits(x, "ppclust")){
@@ -11,7 +11,7 @@ detect.outliers <- function(x, k, tt=0.05, rst=0.2, tcs="m1"){
     if(is.matrix(x) || is.data.frame(x))
       X <- as.matrix(x)
     else
-      stop("Argument 'x' must be an instance of the 'ppclust', a numeric data frame or matrix")
+      stop("Argument 'x' must be an instance of the 'ppclust' or a a numeric data frame or matrix containing raw values of features")
     if(missing(k))
       k <- 2 
     if(!is.numeric(k))
@@ -24,25 +24,25 @@ detect.outliers <- function(x, k, tt=0.05, rst=0.2, tcs="m1"){
     T <- as.matrix(x$t)
   else
     stop("Null typicality degrees matrix")
-  tcs <- match.arg(tcs, c("m1","m2"))
-  if(tt < 0 || tt > 1)
-    stop("Argument 'tt', threshold typicality value cannot be less than 0 or greater than 1")
-  if(rst < 0 || rst > 1)
-    stop("Argument 'rst', threshold row sums of typicalities cannot be less than 0 or greater than 1")
+  tsc <- match.arg(tsc, c("m1","m2"))
+  if(alpha < 0 || alpha > 1)
+    stop("Argument 'alpha', threshold typicality value cannot be less than 0 or greater than 1")
+  if(alpha2 < 0 || alpha2 > 1)
+    stop("Argument 'alpha2', threshold row sums of typicalities cannot be less than 0 or greater than 1")
   n <- nrow(X)
   p <- ncol(X)
   k <- x$k
   csize <- table(x$cluster)
   outliers1 <- outliers2 <- outliers3 <- outliers4 <- NULL
-  outliers1 <- which((rowSums(T) / k) < tt)  
-  outliers2 <- which(rowSums(T) < rst)  
-  outliers3 <- which(apply(T[,], MARGIN = 1, function(x) all(X < tt))) 
-  if(tcs=="m1")
-    tcs <- log((n/k), 2)*log(p, 2)
-  else if(tcs=="m2")
-    tcs <- 2*p+2
+  outliers1 <- which((rowSums(T) / k) < alpha)  
+  outliers2 <- which(rowSums(T) < alpha2)  
+  outliers3 <- which(apply(T[,], MARGIN = 1, function(x) all(X < alpha))) 
+  if(tsc=="m1")
+    tsc <- log((n/k), 2)*log(p, 2)
+  else if(tsc=="m2")
+    tsc <- 2*p+2
   for(i in 1:length(csize))
-    if(csize[i] <= tcs)
+    if(csize[i] <= tsc)
       outliers4 <- c(outliers4, as.integer(row.names(X[x$cluster==i,])))
   if(length(outliers1) > 0)
     names(outliers1) <- paste0("Obj.", 1:length(outliers1))

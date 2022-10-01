@@ -1,11 +1,18 @@
-textVersion="Cebeci, Z., Cebeci, C., Tahtali, Y. & Bayyurt, L. (2022). Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering. PeerJ Computer Science 8:e1060. doi: https://doi.org/10.7717/peerj-cs.1060")
-bibentry("Cebeci_outlier", bibtype = "Article",
- title = "Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering",
- author = c(person("Zeynel", "Cebeci"),
- person("Cagatay", "Cebeci"),
- person("Yalcin", "Tahtali"),
- person("Lutfi","Bayyurt")),
- year = 2022,
- journal = "PeerJ Computer Science",
- volume="8:e1060",
- doi = "https://doi.org/10.7717/peerj-cs.1060")
+citHeader("To cite odetector in publications use:
+
+Cebeci, Z., Cebeci, C., Tahtali, Y. and Bayyurt, L. 2022. Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering. Peerj Computer Science 8:e1060. https://doi.org/10.7717/peerj-cs.1060.")
+
+citEntry(
+   entry="Article",
+   title = "Two novel outlier detection approaches based on unsupervised possibilistic and fuzzy clustering",
+   author = personList(person(first="Zeynel", last="Cebeci"), 
+            person(first="Cagatay", last="Cebeci"),
+            person(first="Yalcin",  last="Tahtali"),
+            person(first="Lutfi", last="Bayyurt")),
+   journal = "PeerJ Computer Science",
+   year    = 2022,
+   volume = "8",
+   number = "e1060",
+   url = "https://doi.org/10.7717/peerj-cs.1060",
+  textVersion = ""
+)

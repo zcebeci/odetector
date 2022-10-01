@@ -1,16 +1,16 @@
 \name{odetector-package}
 \alias{odetector-package}
 \docType{package}
-\title{Outlier Detection Using Possibilistic Fuzzy Cluster Analysis}
+\title{Outlier Detection Using Fuzzy and Possibilistic Clustering Algorithms}
 
 \description{
-An object is an "outlier" if it remarkably deviates from the other objects in a data set. Outlier detection is the process to identify outliers by using the methods that are based on distance measures, clustering and spatial methods (Ben-Gal, 2005). This package introduces a clustering-based outlier detection method. This novel method detects the outliers with three approaches processing typicality degrees that are obtained using the Unsupervised Possibilistic Fuzzy C-Means clustering algorithm (Wu et al, 2010).
+An object is an "outlier" if it remarkably deviates from the other objects in a data set. Outlier detection is a process to identify outliers with the methods based on distance measures, clustering and spatial methods (Ben-Gal, 2005). This package introduces the functions for some novel approaches to detect the outliers based on the typicality degrees, obtained using the fuzzy and possibilistic clustering algorithms, i.e, the Unsupervised Possibilistic Fuzzy C-Means clustering algorithm (Wu et al, 2010).
 }
 
 \details{
-Although it is mostly called as outlier detection or anomaly detection, there are many synonyms of outlier detection depending on the different application domains. For example, the other terms are fraud detection, discordants detection, exception mining, aberration detection, surprise detection, peculiarity detection or contaminant detection etc.  
+Although it is mainly called as outlier detection or anomaly detection, there are many synonym terms of outlier detection in the different application domains, i.e., fraud detection, discordants detection, exception mining, aberration detection, surprise detection, peculiarity detection or contaminant detection etc.  
 
-Outlier detection methods can be classified in many ways. In a common taxonomy, the methods are categorized as  clustering-based methods, distance based methods and density based methods. Clustering-based methods divides data object into clusters and seeks the objects which are not typical members of any of the clusters. The method is applied in this package uses a possibilistic fuzzy clustering algorithm to calculate the typicality degrees of the objects in a data set. The studied method is based on three approaches for deciding the atypicality. An object is atypical if its average possibilistic memberhip degrees is less than a pre-defined threshold possibility degree. The objects are labeled as the outliers if they satify the above rule.
+Outlier detection methods/algorithms can be classified with different taxonomies. In a common taxonomy, they are categorized as  clustering-based methods, distance based methods and density based methods. Clustering-based methods divides data objects into clusters and seeks the objects which are not typical members of any clusters. The novel approaches applied in this package use typicality degrees from a possibilistic and fuzzy clustering algorithms. These approaches are basically decide the atypicality of data points. For example, an object is decided to be atypical if its average possibilistic membership degree to all clusters is less than a pre-defined threshold typicality degree. The objects are labeled as the outliers if they satify the above rule.
 }
 
 \references{
@@ -20,7 +20,7 @@ Ben-Gal, I. (2005). Outlier detection, in \emph{Maimon, O. & Rockach, L. (Eds.) 
 Wu, X., Wu, B., Sun, J. & Fu, H. (2010). Unsupervised possibilistic fuzzy clustering. \emph{J. of Information & Computational Sci.}, 7 (5): 1075-1080.
 }
 
-\author{Zeynel Cebeci, Figen Yildiz}
+\author{Zeynel Cebeci, Cagatay Cebeci, Yalcin Tahtali}
 
 \seealso{
  \code{\link[ppclust]{upfc}},
