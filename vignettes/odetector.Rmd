@@ -2,7 +2,7 @@
 title: 'Outlier Detection Using Possibilistic and Fuzzy Clustering Algorithms'
 author: 'Zeynel Cebeci, Cagatay Cebeci & Yalcin Tahtali'
 #date: '`r format(Sys.Date(), "%B %d, %Y")`'
-date: '2022-09-27'
+date: '2022-10-01'
 output:
   prettydoc::html_pretty:
     theme: cayman
@@ -78,16 +78,15 @@ Since the data set '`x3p4c` has four clusters, we run UPFC for four clusters and
 res.upfc <- upfc(x, centers=4)
 head(res.upfc$t)
 ```
-In clustering based outlier detection,  the use of an optimal number of clusters is very critical point in order to properly partition a data set. Because we need the optimal number of clusters before starting the clustering algorithm, and it totally affect the result of clustering. One can determine it by running an appropriate clustering algorithm for a series of number of clusters in a range, namely '`c1`' and '`c2`', and calculate the clustering validation process. The majority of the validation indices has been proposed for the results from hard clustering algorithms, i.e. K-means. For validating the partitioning results of the fuzzy clustering algorithms a plenty number of clustering validation indexes, i.e, partition entropy (PE), partition coefficient(PC), Xie-Beni index (XB), Kwon index (Kwon) etc., have been proposed. In Cebeci (2020) there are the R implementations of this sort of fuzzy and possibilistic validation indices. Below there is an example using R package '`fcvalid`' for determining the optimal number of clusters (*k*) in the data set '`x3p4c`'. The package can be installed from Github as follows:
+In clustering based outlier detection,  the use of an optimal number of clusters is very critical point in order to properly partition a data set. Because we need the optimal number of clusters before starting the clustering algorithm, and it totally affect the result of clustering. One can determine it by running an appropriate clustering algorithm for a series of number of clusters in a range, namely '`c1`' and '`c2`', and calculate the clustering validation process. The majority of the validation indices has been proposed for the results from hard clustering algorithms, i.e. K-means. For validating the partitioning results of the fuzzy clustering algorithms a plenty number of clustering validation indexes, i.e, partition entropy (PE), partition coefficient (PC), Xie-Beni index (XB), Kwon index (Kwon), Fuzzy Hypervolume index (FHV) etc., have been proposed. In Cebeci (2020) the R implementations of this sort of fuzzy and possibilistic validation indices are given. Below there is an example using R package '`fcvalid`' for determining the optimal number of clusters (*k*) in the data set '`x3p4c`'. The package can be installed from Github as follows:
 
-```{r, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE}
+```{r, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
 if(!require(devtools))
   install.packages("devtools", repo="https://cloud.r-project.org")
   suppressMessages(devtools::install_github("zcebeci/fcvalid"))
 ```
-After installing the package, we run FCM algorithm from the '`ppclust`' package by changing the cluster number from c1 to c2. Then list the fuzzy index values.
-
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
+After installing the package, run the `fcm` function of the `ppclust` package by changing the cluster number from `c1` to `c2`. Then get the fuzzy index values with the relevant function in the package '`fcvalid`'
+```{r, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
  library(ppclust)
  library(fcvalid)
  c1 <- 2  #Starting number of clusters
@@ -114,9 +113,9 @@ After installing the package, we run FCM algorithm from the '`ppclust`' package 
   i <- i+1
  }
 ```
-In the list above, the majority of fuzzy indices suggests the optimal number of clusters as 3 while some suggests as 4. As a powerful fuzzy index, the Fuzzy Hypervolume (FHV) index suggests 4 clusters in the data set. So we can use this number as the optimal number of clusters.
+In the result from the R script above, you will see that the majority of fuzzy indices suggests the optimal number of clusters as 3 while some suggests as 4. For example, as a powerful fuzzy index, the Fuzzy Hypervolume (FHV) index suggests 4 clusters in the data set. So we can extract this number as the optimal number of clusters as follows:
 
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
+```{r, eval=FALSE, message=FALSE, warning=FALSE}
  # Display the fuzzy indices in various runs of FCM
  indvals <- round(t(indvals),3)
  print(indvals)
@@ -126,9 +125,9 @@ In the list above, the majority of fuzzy indices suggests the optimal number of 
  k <- unname(which.min(indvals["FHV",])) + 1
  k
 ```
-Below, there is an example to run UPFC algorithm with the optimal number of clusters found in the previous example.
+Below, there is an example to run UPFC algorithm with the optimal number of clusters found in the previous example. In the result object named `res.upfc`, `t` contains the typicality degrees to be used in outlier detection.
 
-```{r echo=TRUE, message=FALSE, warning=FALSE}
+```{r eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
 res.upfc <- upfc(x, centers=k)
 head(res.upfc$t)
 ```
