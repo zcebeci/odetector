@@ -1,6 +1,6 @@
 \name{detect.outliers}
 \alias{detect.outliers}
-\title{Detect outliers}
+\title{Detect outliers using typicality degrees}
 \usage{
 detect.outliers (x, k, alpha=0.05, alpha2=0.2, tsc="m1")
 }
@@ -17,7 +17,7 @@ The \code{detect.outliers} function finds the outliers by using four different a
 \details{
 The function \code{detect.outliers} computes the outliers by using four different approaches. The first approach (Approach 1) assumes that a data object is an outlier if its average typicality is less than the \code{alpha}, a user-defined threshold typicality degree. If the sum of typicality degrees of an object to all clusters is less than the \code{alpha2}, a user-defined threshold value for typicalities row sums. In the third approach (Approach 3) an object is labeled as an outlier, if its typicality to all clusters is less than the \code{alpha}. The last approach (Approach 4) is that all members of a small cluster are the collective outliers and can be labeled as the outliers. 
 
-With Approach 4, the members of a small clusters are considered as the collective outliers. In the function \code{detect.outliers}, two different methods are available to compute the threshold small cluster size (\code{tsc}). In the following equations, the first one has been proposed by Santos-Pereira & Pires(2002) and works for the small data sets. The second is a novel method is proposed by the authors of this document and works better than the previous one for the large data sets.
+With Approach 4, the members of a small clusters are considered as the collective outliers. In the function \code{detect.outliers}, two different methods are available to compute the threshold small cluster size (\code{tsc}). In the following equations, the first one has been proposed by Santos-Pereira & Pires(2002) and works good for the small data sets. The second is a novel method is proposed by the authors of this document and works better than the previous one for the larger data sets.
 \deqn{tsc_1 = 2 p + 2}{tsc_1 = 2 p + 2} 
 \deqn{tsc_2 = \frac{log_2 n}{k} \; log_2 p}{tsc_2=\frac{log_2 n}{k} \; log_2 p}
 where:
