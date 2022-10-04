@@ -57,28 +57,28 @@ pairs(x3p4c[,-4], col=x3p4c[,4]+1)
 ```
 
 # Possibilistic Fuzzy C-Means Cluster Analysis
-The outlier detection algorithm in the package '`odetector`' uses the typicality degrees which are produced by a possibilistic clustering algorithm such as PCM, FPCM, PFCM or UPFC. Here, we perform the outlier detection process on the results from UPFC algorithm (Wu et al, 2010) implemented in the package '`ppclust`' (Cebeci, 2018). For the details see the manual and vignettes of the R package '`ppclust`' at  https://CRAN.R-project.org/package=ppclust. In order to run UPFC, load the '`ppclust`' into working environment.
+The outlier detection algorithm in the package '`odetector`' uses the typicality degrees which are produced by a possibilistic clustering algorithm such as Possibilistic C-means (PCM), Fuzzy Possibilistic C-means (FPCM), Possibilistic Fuzzy C-means (PFCM) or Unsupervised Possibilistic Fuzzy C-means (UPFC). In this example, we use the outlier detection process on the results from UPFC algorithm (Wu et al, 2010) implemented in the package '`ppclust`' (Cebeci, 2018). For the details see the manual and vignettes of the R package '`ppclust`' at  https://CRAN.R-project.org/package=ppclust. If required, in order to run UPFC, the '`ppclust`' can be loadede into working environment as follows:
 
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
+```{r, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
 if(!require(ppclust)){
   install.packages("ppclust", repo="https://cloud.r-project.org");
-  require(ppclust)
 }
 ```
-For clustering we select the columns of features from the data set '`x3p4c`' and store in the data frame named x as follows:
+For clustering we select the columns of features from the data set '`x3p4c`' and store in the data frame named `x` as follows:
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 x <- x3p4c[,-4]
 head(x)
 tail(x)
 ```
-Since the data set '`x3p4c` has four clusters, we run UPFC for four clusters and display the clustering results with following commands:
+Since the data set '`x3p4c` has four clusters, we run UPFC for 4 clusters and display the firsrt row of clustering results with following commands:
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
+require(ppclust)
 res.upfc <- upfc(x, centers=4)
 head(res.upfc$t)
 ```
-In clustering based outlier detection,  the use of an optimal number of clusters is very critical point in order to properly partition a data set. Because we need the optimal number of clusters before starting the clustering algorithm, and it totally affect the result of clustering. One can determine it by running an appropriate clustering algorithm for a series of number of clusters in a range, namely '`c1`' and '`c2`', and calculate the clustering validation process. The majority of the validation indices has been proposed for the results from hard clustering algorithms, i.e. K-means. For validating the partitioning results of the fuzzy clustering algorithms a plenty number of clustering validation indexes, i.e, partition entropy (PE), partition coefficient (PC), Xie-Beni index (XB), Kwon index (Kwon), Fuzzy Hypervolume index (FHV) etc., have been proposed. In Cebeci (2020) the R implementations of this sort of fuzzy and possibilistic validation indices are given. Below there is an example using R package '`fcvalid`' for determining the optimal number of clusters (*k*) in the data set '`x3p4c`'. The package can be installed from Github as follows:
+In clustering based outlier detection,  the use of optimal number of clusters is very critical point in order to properly partition a data set. Because we need the optimal number of clusters before starting the clustering algorithm, and it totally affect the result of clustering. One can determine it by running an appropriate clustering algorithm for a series of number of clusters in a range, namely '`c1`' and '`c2`', and calculate the clustering validation process. The majority of the validation indices has been proposed for the results from hard clustering algorithms, i.e. K-means. For validating the partitioning results of the fuzzy clustering algorithms a plenty number of clustering validation indexes, i.e, partition entropy (PE), partition coefficient (PC), Xie-Beni index (XB), Kwon index (Kwon), Fuzzy Hypervolume index (FHV) etc., have been proposed. In Cebeci (2020) the R implementations of this sort of fuzzy and possibilistic validation indexes are described. Below there is an example using R package '`fcvalid`' for determining the optimal number of clusters (*k*) in the data set '`x3p4c`'. It can be installed from Github as follows:
 
 ```{r, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
 if(!require(devtools))
@@ -214,6 +214,7 @@ As seen below, the data object `66` is also evaluated as the outlier with the se
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 res.out$outliers1
+plot(res.out, ot=1)
 ```
 
 # Citing this vignette and the package odetector{-}
