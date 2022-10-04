@@ -2,7 +2,12 @@
 Outlier Detection Based On Fuzzy and Possibilistic Clustering
 
 ## Install the package 'odetector'
-In order to install the package `odetector` from the GitHub repository you should first install the `devtools` package from CRAN into your local system. Then you can install the package  `odetector` using `install_github` of `devtools` package as shown with the R code chunks below:
+You can download a stable version of the package `odetector` from CRAN cloud as follows:
+```{r}
+install.package("odetector", repos="https://cloud.r-project.org")
+```
+
+In order to install the most recent version of the package `odetector` from the GitHub repository you should first install the `devtools` package from CRAN into your local system. Then you can install the package  `odetector` using `install_github` of `devtools` package as shown with the R code chunks below:
 
 ```{r}
 if(!require(devtools)) {install.packages('devtools'); require(devtools)}
