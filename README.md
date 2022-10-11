@@ -1,5 +1,5 @@
 # odetector
-Outlier Detection Based On Fuzzy and Possibilistic Clustering
+Outlier Detection Using Partitioning Clustering Algorithms
 
 ## Install the package 'odetector'
 You can download a stable version of the package `odetector` from CRAN cloud as follows:
